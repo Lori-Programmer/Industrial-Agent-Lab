@@ -1,10 +1,9 @@
 import { spawn } from "node:child_process";
 
 const isWindows = process.platform === "win32";
-const command = isWindows ? "cmd" : "sh";
-const args = isWindows ? ["/c", "vite --host 127.0.0.1"] : ["-lc", "vite --host 127.0.0.1"];
+const nodePath = process.execPath.replace(/^"|"$/g, "");
 
-const vite = spawn(command, args, {
+const vite = spawn(nodePath, ["./node_modules/vite/bin/vite.js", "--host", "127.0.0.1"], {
   stdio: "inherit",
   shell: false,
   env: process.env
@@ -25,11 +24,7 @@ async function waitForDevServer() {
 
 try {
   await waitForDevServer();
-  const electronCommand = isWindows ? "cmd" : "sh";
-  const electronArgs = isWindows
-    ? ["/c", "electron dist-electron/main.js"]
-    : ["-lc", "electron dist-electron/main.js"];
-  const electron = spawn(electronCommand, electronArgs, {
+  const electron = spawn(nodePath, ["./node_modules/electron/cli.js", "dist-electron/main.js"], {
     stdio: "inherit",
     shell: false,
     env: {

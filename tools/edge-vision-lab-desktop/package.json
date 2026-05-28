@@ -5,11 +5,11 @@
   "description": "Windows offline fixed industrial object recognition desktop demo.",
   "main": "dist-electron/main.js",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "tsc --noEmit && vite build && tsc -p tsconfig.electron.json",
-    "build:electron": "tsc -p tsconfig.electron.json",
-    "electron": "npm run build:electron && node scripts/dev-electron.mjs",
-    "dist": "npm run build && electron-builder --win portable --config electron-builder.yml"
+    "dev": "scripts\\node-run.cmd ./node_modules/vite/bin/vite.js --host 127.0.0.1",
+    "build": "scripts\\node-run.cmd ./node_modules/typescript/bin/tsc --noEmit && scripts\\node-run.cmd ./node_modules/vite/bin/vite.js build && scripts\\node-run.cmd ./node_modules/typescript/bin/tsc -p tsconfig.electron.json",
+    "build:electron": "scripts\\node-run.cmd ./node_modules/typescript/bin/tsc -p tsconfig.electron.json",
+    "electron": "scripts\\node-run.cmd ./node_modules/typescript/bin/tsc -p tsconfig.electron.json && scripts\\node-run.cmd scripts/dev-electron.mjs",
+    "dist": "npm run build && scripts\\node-run.cmd ./node_modules/electron-builder/cli.js --win portable --config electron-builder.yml"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
