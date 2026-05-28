@@ -1,0 +1,15 @@
+.next
+out
+node_modules
+.env*
+!.env.example
+*.log
+dist
+coverage
+.deploy
+*.tar.gz
+*.mp4
+*.mov
+*.webm
+captures/
+recordings/
