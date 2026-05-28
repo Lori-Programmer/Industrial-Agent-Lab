@@ -1,0 +1,13 @@
+appId: com.utmaxs.edgevisionlabdesktop
+productName: Edge Vision Lab Desktop
+directories:
+  output: release
+files:
+  - dist/**
+  - dist-electron/**
+asar: true
+win:
+  target:
+    - portable
+  artifactName: Edge-Vision-Lab-Desktop-${version}-Windows.${ext}
+publish: null

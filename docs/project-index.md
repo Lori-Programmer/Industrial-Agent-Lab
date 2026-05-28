@@ -8,6 +8,12 @@
 - Purpose: 固定场景工业视觉识物与工程状态判断 Demo。
 - Status: V1 scaffold, website demo 已有历史实现，正式本地运行版待继续抽取。
 
+### Edge Vision Lab Desktop
+
+- Path: `tools/edge-vision-lab-desktop`
+- Purpose: Windows 离线固定工业场景物体识别工具，第一版使用 mock 数据并预留本地 ONNX 推理。
+- Status: V1 scaffold.
+
 ## Planned
 
 ### Elevator Dispatch Simulator

@@ -1,0 +1,28 @@
+{
+  "name": "edge-vision-lab-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Windows offline fixed industrial object recognition desktop demo.",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build && tsc -p tsconfig.electron.json",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "electron": "npm run build:electron && node scripts/dev-electron.mjs",
+    "dist": "npm run build && electron-builder --win portable --config electron-builder.yml"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.2"
+  }
+}
