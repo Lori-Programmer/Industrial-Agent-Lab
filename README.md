@@ -7,6 +7,7 @@
 | 工具 | 状态 | 解决的问题 |
 | --- | --- | --- |
 | [Edge Vision Lab](./tools/edge-vision-lab/README.md) | V1 scaffold | 固定场景工业视觉识物、边缘 AI 和工程状态判断 Demo |
+| [Edge Vision Lab Desktop](./tools/edge-vision-lab-desktop/README.md) | V1 scaffold | Windows 离线工业视觉识物桌面工具 |
 | [Elevator Dispatch Simulator](./tools/elevator-dispatch-simulator/README.md) | Planned | 电梯群控、调度策略、强化学习和仿真教学 |
 | [Industrial Agent Bus](./tools/industrial-agent-bus/README.md) | Planned | 工业智能体之间的消息、状态、任务和事件协议 |
 | [_unsorted](./tools/_unsorted/README.md) | Holding area | 暂未拆分到具体工具的历史网站源码和部署资产 |

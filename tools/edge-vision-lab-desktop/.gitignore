@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-electron/
+release/
+.vite/
+.env
+.env.*
+*.log
+*.key
+*.pem
+models/*
+!models/.gitkeep
+public/models/*
+!public/models/.gitkeep
