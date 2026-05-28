@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-md bg-signal-blue px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-signal-cyan focus:outline-none focus:ring-2 focus:ring-signal-blue focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-industrial-950;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:border-signal-cyan hover:text-signal-cyan focus:outline-none focus:ring-2 focus:ring-signal-cyan;
+  }
+
+  .panel {
+    @apply rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-white/[0.04];
+  }
+
+  .eyebrow {
+    @apply mb-3 text-sm font-semibold uppercase tracking-normal text-signal-blue dark:text-signal-cyan;
+  }
+
+  .page-hero {
+    @apply border-b border-slate-200 bg-slate-950 px-5 py-16 text-white sm:px-8 lg:px-10 dark:border-white/10;
+  }
+
+  .page-hero > * {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .page-hero h1 {
+    @apply text-4xl font-semibold leading-tight tracking-normal sm:text-5xl lg:text-6xl;
+  }
+
+  .page-hero p:last-child {
+    @apply mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg;
+  }
+
+  .prose-industrial {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+
+  .prose-industrial h1 {
+    @apply mt-10 text-4xl font-semibold tracking-normal text-slate-950 dark:text-white;
+  }
+
+  .prose-industrial h2 {
+    @apply mt-10 text-2xl font-semibold tracking-normal text-slate-950 dark:text-white;
+  }
+
+  .prose-industrial h3 {
+    @apply mt-8 text-xl font-semibold tracking-normal text-slate-950 dark:text-white;
+  }
+
+  .prose-industrial p {
+    @apply mt-4 leading-8;
+  }
+
+  .prose-industrial ul {
+    @apply mt-4 list-disc space-y-2 pl-5;
+  }
+
+  .prose-industrial a {
+    @apply font-semibold text-signal-blue;
+  }
+
+  .prose-industrial code {
+    @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm text-slate-900 dark:bg-white/10 dark:text-white;
+  }
+
+  .prose-industrial pre {
+    @apply mt-5 overflow-x-auto rounded-lg bg-slate-950 p-4 text-sm text-slate-100;
+  }
+
+  .prose-industrial .table-scroll {
+    @apply mt-5 overflow-x-auto rounded-lg border border-slate-200 dark:border-white/10;
+  }
+
+  .prose-industrial table {
+    @apply w-full border-collapse bg-white text-sm dark:bg-white/[0.04];
+  }
+
+  .prose-industrial th {
+    @apply bg-slate-100 px-4 py-3 text-left font-semibold text-slate-900 dark:bg-white/[0.08] dark:text-white;
+  }
+
+  .prose-industrial td {
+    @apply border-t border-slate-200 px-4 py-3 align-top leading-6 dark:border-white/10;
+  }
+
+  .edge-panel {
+    @apply rounded-lg border border-white/10 bg-white/[0.04] p-5;
+  }
+
+  .edge-eyebrow {
+    @apply mb-3 text-sm font-semibold uppercase tracking-normal text-signal-cyan;
+  }
+
+  .edge-heading {
+    @apply text-2xl font-semibold tracking-normal text-white;
+  }
+
+  .edge-option {
+    @apply flex min-h-16 cursor-pointer items-center gap-3 rounded-lg border border-white/10 bg-white/[0.05] px-3 py-3 text-sm text-slate-200 transition hover:border-signal-cyan;
+  }
+
+  .edge-field {
+    @apply grid gap-2 text-sm font-semibold text-slate-200;
+  }
+
+  .edge-field input,
+  .edge-field select,
+  .edge-field textarea {
+    @apply rounded-md border border-white/10 bg-black/35 px-3 py-3 text-sm font-normal text-white outline-none transition placeholder:text-slate-500 focus:border-signal-cyan;
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.12), transparent 34rem),
+    linear-gradient(180deg, #f7f9fc 0%, #eef3f8 100%);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(77, 163, 255, 0.16), transparent 34rem),
+    linear-gradient(180deg, #070b12 0%, #0b1220 100%);
+}
+
+::selection {
+  background: rgba(77, 163, 255, 0.35);
+}
+
+.industrial-grid {
+  background-image:
+    linear-gradient(rgba(145, 164, 189, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(145, 164, 189, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.route-tree::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 4.5rem;
+  bottom: 0;
+  border-left: 1px solid rgba(145, 164, 189, 0.42);
+}
+
+@media (max-width: 768px) {
+  .route-tree::before {
+    left: 1rem;
+  }
+}
