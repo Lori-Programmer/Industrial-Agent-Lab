@@ -1,6 +1,6 @@
 export type InferenceMode = "offline-mock" | "offline-onnx";
 export type RuntimeMode = "offline-local-demo";
-export type ResolutionKey = "320x240" | "640x480";
+export type ResolutionKey = "320x240" | "640x480" | "1280x720";
 export type SceneType =
   | "PLC Debugging Desk"
   | "Tools And Devices"

@@ -8,6 +8,21 @@ npm install
 npm run electron
 ```
 
+打包安装版：
+
+```bash
+npm run dist
+```
+
+安装版和便携版输出到 `release/`，该目录不提交到 GitHub。
+
+输出示例：
+
+- `Edge-Vision-Lab-Desktop-Setup-1.0.0-Windows-x64.exe`
+- `Edge-Vision-Lab-Desktop-Portable-1.0.0-Windows-x64.exe`
+
+当前安装包未做代码签名，不自动发布 release。正式公开分发前应补充代码签名、病毒误报测试和 release 校验信息。
+
 ## 使用流程
 
 1. 阅读隐私与安全边界。
@@ -27,6 +42,7 @@ npm run electron
 - 点击停止摄像头后，视频流应清空，摄像头指示灯应关闭。
 - 切换摄像头前应用会释放旧摄像头资源。
 - 关闭窗口前应用会尝试释放摄像头资源。
+- 高分辨率 `1280x720` 和 `15 FPS` 只建议在电脑性能足够时开启。
 
 ## JSON 导出
 

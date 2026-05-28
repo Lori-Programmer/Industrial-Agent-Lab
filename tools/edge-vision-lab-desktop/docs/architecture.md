@@ -31,7 +31,9 @@ Edge Vision Lab Desktop is an Electron + React + TypeScript Windows offline app.
 
 - Default resolution: 640x480.
 - Default frame rate request: 15 FPS, max 20.
-- Detection frequency: 3, 5 or 10 FPS.
+- Optional high resolution: 1280x720.
+- Camera frame rate request: 15 FPS by default, up to 30 FPS for high-resolution devices.
+- Detection frequency: 3, 5, 10 or 15 FPS.
 - No per-frame React state update.
 - Detection boxes are drawn on a lightweight canvas overlay.
 - Future ONNX inference must be throttled and must fallback to mock on failure.

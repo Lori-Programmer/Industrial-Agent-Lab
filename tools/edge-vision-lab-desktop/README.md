@@ -74,6 +74,21 @@ npm run build
 npm run dist
 ```
 
+中国网络环境下推荐：
+
+```bash
+npm run dist:cn
+```
+
+打包后会在 `release/` 目录生成：
+
+- Windows 安装版：带桌面快捷方式、开始菜单快捷方式和应用图标。
+- Windows 便携版：无需安装，直接运行。
+
+`release/` 不提交到 GitHub，不自动发布 release。
+
+当前配置为了兼容普通权限 Windows 环境，设置了 `signAndEditExecutable: false`，可以稳定生成未签名安装包。正式发布时，如果需要把图标完整写入 Windows EXE 资源，请开启 Windows 开发者模式或用管理员 PowerShell 打包，然后移除 `electron-builder.yml` 中的 `signAndEditExecutable: false`。
+
 ## 目录结构
 
 ```text
@@ -81,6 +96,8 @@ tools/edge-vision-lab-desktop/
 ├─ README.md
 ├─ package.json
 ├─ electron-builder.yml
+├─ assets/
+│  └─ icon.ico
 ├─ docs/
 ├─ prompts/
 ├─ public/
@@ -137,6 +154,8 @@ tools/edge-vision-lab-desktop/
 5. `postprocess.ts` 做 YOLO 输出解析、置信度过滤、NMS 和坐标还原。
 6. 模型加载失败时 fallback 到 mock demo。
 
+正式 AI 识别需要准备的材料见 [docs/model-requirements.md](./docs/model-requirements.md)。
+
 ## Industrial Agent Bus 预留
 
 导出的 JSON 已包含：
@@ -170,3 +189,10 @@ tools/edge-vision-lab-desktop/
 - 点击“停止摄像头”会停止检测循环、调用 `track.stop()` 并清空 `video.srcObject`。
 - 关闭窗口前会尝试释放摄像头资源。
 - 摄像头开启后默认 10 分钟自动停止，避免长时间占用设备。
+
+## 性能档位
+
+- 分辨率：320x240、640x480、1280x720。
+- 识别频率：3 FPS、5 FPS、10 FPS、15 FPS。
+- 默认仍使用 640x480 和 5 FPS，适合普通电脑低风险演示。
+- 1280x720 与 15 FPS 更吃 CPU/GPU，只建议在本机性能足够、真实 ONNX 模型较小的情况下使用。

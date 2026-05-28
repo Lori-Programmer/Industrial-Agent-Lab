@@ -15,8 +15,8 @@ const SCENES: SceneType[] = [
 ];
 
 const CAMERA_AUTO_STOP_MS = 10 * 60 * 1000;
-const FPS_OPTIONS = [3, 5, 10];
-const RESOLUTION_OPTIONS: ResolutionKey[] = ["320x240", "640x480"];
+const FPS_OPTIONS = [3, 5, 10, 15];
+const RESOLUTION_OPTIONS: ResolutionKey[] = ["320x240", "640x480", "1280x720"];
 
 export default function App() {
   const videoRef = useRef<HTMLVideoElement | null>(null);

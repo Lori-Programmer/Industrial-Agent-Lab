@@ -2,6 +2,7 @@
   "name": "edge-vision-lab-desktop",
   "version": "1.0.0",
   "private": true,
+  "author": "Lori-Programmer",
   "description": "Windows offline fixed industrial object recognition desktop demo.",
   "main": "dist-electron/main.js",
   "scripts": {
@@ -9,20 +10,21 @@
     "build": "scripts\\node-run.cmd ./node_modules/typescript/bin/tsc --noEmit && scripts\\node-run.cmd ./node_modules/vite/bin/vite.js build && scripts\\node-run.cmd ./node_modules/typescript/bin/tsc -p tsconfig.electron.json",
     "build:electron": "scripts\\node-run.cmd ./node_modules/typescript/bin/tsc -p tsconfig.electron.json",
     "electron": "scripts\\node-run.cmd ./node_modules/typescript/bin/tsc -p tsconfig.electron.json && scripts\\node-run.cmd scripts/dev-electron.mjs",
-    "dist": "npm run build && scripts\\node-run.cmd ./node_modules/electron-builder/cli.js --win portable --config electron-builder.yml"
+    "dist": "scripts\\node-run.cmd ./node_modules/typescript/bin/tsc --noEmit && scripts\\node-run.cmd ./node_modules/vite/bin/vite.js build && scripts\\node-run.cmd ./node_modules/typescript/bin/tsc -p tsconfig.electron.json && scripts\\node-run.cmd ./node_modules/electron-builder/cli.js --win --config electron-builder.yml",
+    "dist:cn": "scripts\\dist-cn.cmd"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "electron": "^33.2.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "vite": "^6.0.7"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
     "@types/node": "^22.10.5",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "electron": "^33.2.1",
     "electron-builder": "^25.1.8",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
   }
 }

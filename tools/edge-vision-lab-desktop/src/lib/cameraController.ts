@@ -2,7 +2,8 @@ import type { ResolutionKey } from "../types";
 
 const RESOLUTION_MAP: Record<ResolutionKey, { width: number; height: number }> = {
   "320x240": { width: 320, height: 240 },
-  "640x480": { width: 640, height: 480 }
+  "640x480": { width: 640, height: 480 },
+  "1280x720": { width: 1280, height: 720 }
 };
 
 export async function listCameraDevices() {
@@ -22,7 +23,7 @@ export async function startCameraStream(options: {
       deviceId: options.deviceId ? { exact: options.deviceId } : undefined,
       width: { ideal: size.width },
       height: { ideal: size.height },
-      frameRate: { ideal: 15, max: 20 }
+      frameRate: { ideal: options.resolution === "1280x720" ? 24 : 15, max: 30 }
     },
     audio: false
   });

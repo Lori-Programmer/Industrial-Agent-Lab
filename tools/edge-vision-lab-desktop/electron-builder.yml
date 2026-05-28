@@ -2,12 +2,29 @@ appId: com.utmaxs.edgevisionlabdesktop
 productName: Edge Vision Lab Desktop
 directories:
   output: release
+  buildResources: assets
 files:
   - dist/**
   - dist-electron/**
 asar: true
 win:
+  icon: assets/icon.ico
+  signAndEditExecutable: false
   target:
-    - portable
-  artifactName: Edge-Vision-Lab-Desktop-${version}-Windows.${ext}
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+nsis:
+  artifactName: Edge-Vision-Lab-Desktop-Setup-${version}-Windows-${arch}.${ext}
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Edge Vision Lab Desktop
+portable:
+  artifactName: Edge-Vision-Lab-Desktop-Portable-${version}-Windows-${arch}.${ext}
 publish: null
