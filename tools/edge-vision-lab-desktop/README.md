@@ -62,6 +62,14 @@ Remove-Item -Recurse -Force .\node_modules\electron
 npm install
 ```
 
+如果安装版或便携版打开后黑屏，请重新执行：
+
+```powershell
+npm run dist:cn
+```
+
+桌面版使用 `base: "./"` 生成相对资源路径，确保安装包通过 `file://` 打开时能加载 JS 和 CSS。
+
 构建前端和 Electron 主进程：
 
 ```bash
