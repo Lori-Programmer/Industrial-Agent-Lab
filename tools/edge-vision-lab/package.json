@@ -4,8 +4,7 @@
   "private": true,
   "description": "Browser-local fixed-scene industrial object detection demo scaffold.",
   "scripts": {
-    "dev": "npm run dev --workspace-root",
-    "build": "npm run build --workspace-root"
+    "check": "node -e \"console.log('Edge Vision Lab scaffold is ready. Integrate src/ into a Next.js or React app before running a live demo.')\""
   },
   "dependencies": {
     "onnxruntime-web": "^1.26.0"
