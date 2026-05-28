@@ -316,7 +316,7 @@ export default function App() {
             <button onClick={() => void startCamera()} disabled={!canUseCamera || isCameraOn}>
               开启摄像头
             </button>
-            <button onClick={stopCamera} disabled={!isCameraOn}>
+            <button onClick={() => stopCamera()} disabled={!isCameraOn}>
               停止摄像头
             </button>
             <button onClick={() => void switchCamera()} disabled={!canUseCamera || devices.length <= 1}>

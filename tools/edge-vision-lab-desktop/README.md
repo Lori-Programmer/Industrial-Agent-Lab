@@ -47,6 +47,21 @@ npm run dev
 npm run electron
 ```
 
+如果提示 `Electron failed to install correctly`，说明 Electron 二进制下载不完整。Windows PowerShell 中执行：
+
+```powershell
+Remove-Item -Recurse -Force .\node_modules\electron
+npm install
+```
+
+如果网络下载 Electron 较慢，可以临时使用镜像：
+
+```powershell
+$env:ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
+Remove-Item -Recurse -Force .\node_modules\electron
+npm install
+```
+
 构建前端和 Electron 主进程：
 
 ```bash
