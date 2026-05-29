@@ -14,14 +14,15 @@
     "dist:cn": "scripts\\dist-cn.cmd"
   },
   "dependencies": {
+    "onnxruntime-node": "^1.26.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
     "@types/node": "^22.10.5",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
     "electron": "^33.2.1",
     "electron-builder": "^25.1.8",
     "typescript": "^5.7.2",
